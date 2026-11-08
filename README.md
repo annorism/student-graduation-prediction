@@ -1,33 +1,31 @@
 # Student Graduation Prediction
 
-A simple machine learning project to predict student graduation status using the Decision Tree classification algorithm.
+A machine learning project to predict student graduation status using the Decision Tree classification algorithm.
 
 ## Overview
 
-This project uses a Decision Tree model to classify whether a student is predicted to graduate based on academic performance data.
+This project implements a Decision Tree model to classify student graduation status based on academic performance data.
 
-The prediction uses three main features:
+The model uses three features:
 
 - **IPK (GPA):** Student grade point average.
-- **Kehadiran (Attendance):** Student attendance percentage.
+- **Kehadiran (Attendance):** Student attendance.
 - **Tugas (Assignment):** Student assignment score.
 
-The target variable is **Lulus**, with two classes: `Ya` and `Tidak`.
+The target variable is **Lulus**, consisting of two classes: `Ya` and `Tidak`.
 
 ## Dataset
 
-The dataset contains 20 student records with 4 columns:
+The dataset contains student academic records with four columns:
 
 | Column | Description |
 |---|---|
 | IPK | Student GPA |
-| Kehadiran | Attendance |
-| Tugas | Assignment score |
+| Kehadiran | Student attendance |
+| Tugas | Student assignment score |
 | Lulus | Graduation status |
 
-Class distribution:
-- Ya: 11 records
-- Tidak: 9 records
+Dataset file: `Soal pertemuan 10 - Sheet1.csv`
 
 ## Technologies Used
 
@@ -39,7 +37,7 @@ Class distribution:
 ## Machine Learning Workflow
 
 1. Load the dataset using Pandas.
-2. Encode the graduation labels using Label Encoder.
+2. Encode graduation labels using Label Encoder.
 3. Separate features and target variables.
 4. Split the dataset into training and testing sets (80:20).
 5. Train the Decision Tree classifier using the Entropy criterion.
@@ -58,12 +56,48 @@ student-graduation-prediction/
 ├── README.md
 ├── decisiontree.py
 ├── requirements.txt
-└── Soal pertemuan 10 - Sheet1.csv
+├── Soal pertemuan 10 - Sheet1.csv
+│
+└── outputs/
+    ├── decision-tree.png
+    ├── model-evaluation.png
+    └── new-predictions.png
 ```
+
+## Results & Visualization
+
+### 1. Model Evaluation
+
+The model evaluation includes accuracy, confusion matrix, and classification report.
+
+![Model Evaluation](outputs/model-evaluation.png)
+
+### 2. New Student Prediction
+
+The model is tested using new student data based on GPA, attendance, and assignment scores.
+
+![New Student Prediction](outputs/new-predictions.png)
+
+### 3. Decision Tree Visualization
+
+The following image displays the trained Decision Tree model and its decision-making structure.
+
+![Decision Tree Visualization](outputs/decision-tree.png)
+
+## Example Prediction
+
+The program tests two sample student records:
+
+| IPK | Kehadiran | Tugas |
+|---:|---:|---:|
+| 3.4 | 88 | 84 |
+| 2.2 | 60 | 55 |
+
+The model generates graduation predictions based on the trained Decision Tree classifier.
 
 ## Installation
 
-Install the required Python libraries:
+Install the required libraries:
 
 ```bash
 pip install -r requirements.txt
@@ -78,15 +112,6 @@ Run the program:
 ```bash
 python decisiontree.py
 ```
-
-## Example Prediction
-
-The program tests two example student records:
-
-- IPK: 3.4, Kehadiran: 88, Tugas: 84
-- IPK: 2.2, Kehadiran: 60, Tugas: 55
-
-The model generates graduation predictions based on the trained Decision Tree classifier.
 
 ## Author
 
